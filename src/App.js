@@ -2,15 +2,19 @@ import logo from './logo.svg';
 import './App.css';
 
 //variables
-const welcome = {
-  greeting: "Hello, world!",
-  titles: "This is a React App title"
-}
+function getTitle (title) {
+  return title;
+};
 
 function App() {
   return (
     <div>
-      {welcome.greeting} {welcome.titles}
+      <h1>
+        Welcome to {getTitle ('React App')}
+      </h1>
+
+      <label htmlFor="try" > Yet a try:</label>
+      <input type="text" id="try" placeholder="Try again later" />
     </div>
   );
 }
