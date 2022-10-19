@@ -6,14 +6,14 @@ function getTitle (title) {
   return title;
 };
 
-const listItem = [
+const list = [
   {
     title: 'ExpressJs',
     url: 'http://expressjs.com/',
     author: 'expressjs',
     points: 4,
     num_comments: 10,
-    ObjectId: '1'
+    objectID: '1'
   },
   {
     title: 'NodeJs',
@@ -21,35 +21,39 @@ const listItem = [
     author: 'nodejs',
     points: 4,
     num_comments: 20,
-    ObjectId: '2'
+    objectID: '2'
   },
 ];
 
-function outPut (item) {
-   return (
-    <li key={item.ObjectId}>
-      <span>
-        { item.title }
-      </span>
-      <br />
-      <span>
-        { item.url}
-      </span>
-      <br />
-      <span>
-        {item.author}
-      </span>
-      <br />
-      <span>
-        { item.points }
-      </span>
-      <br />
-      <span>
-        { item.num_comments }
-      </span>
-    </li>
-   );
-}
+function List () {
+  return (
+    <ul>
+      {
+        list.map ( function (item) {
+          return (
+            <li key={item.objectID}>
+                <span>
+                  <a href={item.url}> {item.title} </a>
+                </span>
+                <br />
+                <span>
+                  {item.author}
+                </span>
+                <br />
+                <span>
+                  {item.points}
+                </span>
+                <span>
+                  {item.num_comments}
+                </span>
+          </li>
+          );
+        })
+      }
+    </ul>
+  )
+};  
+
 function App() {
   return (
     <div>
@@ -63,11 +67,7 @@ function App() {
       <hr />
       {/*want to display array below */}
 
-      <ul>
-        {
-          listItem.map (outPut)
-        }
-      </ul>
+      <List />
 
     </div>
   );
