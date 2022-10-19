@@ -25,7 +25,7 @@ const list = [
   },
 ];
 
-function Try () {
+const Try = () => {
   return (
     <div>
       <label htmlFor="try" > Yet a try:</label>
@@ -34,11 +34,11 @@ function Try () {
   );
 }
 
-function List () {
+const List  = () => {
   return (
     <ul>
       {
-        list.map ( function (item) {
+        list.map ( (item) => {
           return (
             <li key={item.objectID}>
                 <span>
@@ -63,7 +63,7 @@ function List () {
   )
 };  
 
-function App() {
+const App = () => {
   return (
     <div>
       <h1>
