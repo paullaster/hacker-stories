@@ -6,25 +6,6 @@ function getTitle (title) {
   return title;
 };
 
-const list = [
-  {
-    title: 'ExpressJs',
-    url: 'http://expressjs.com/',
-    author: 'expressjs',
-    points: 4,
-    num_comments: 10,
-    objectID: '1'
-  },
-  {
-    title: 'NodeJs',
-    url: 'http://nodejs.org/',
-    author: 'nodejs',
-    points: 4,
-    num_comments: 20,
-    objectID: '2'
-  },
-];
-
 const Try = () => {
   const handleChange = (event) => {
     console.log (event.target.value);
@@ -37,10 +18,10 @@ const Try = () => {
   );
 }
 
-const List  = () =>(
+const List  = (props) =>(
     <ul>
       {
-        list.map ( (item) => {
+        props.list.map ( (item) => {
           return(
             <li key={item.objectID}>
                 <span>
@@ -64,10 +45,29 @@ const List  = () =>(
     </ul>
   )
 
-const App = () =>(
+const App = () => {
+  const stories = [
+    {
+      title: 'ExpressJs',
+      url: 'http://expressjs.com/',
+      author: 'expressjs',
+      points: 4,
+      num_comments: 10,
+      objectID: '1'
+    },
+    {
+      title: 'NodeJs',
+      url: 'http://nodejs.org/',
+      author: 'nodejs',
+      points: 4,
+      num_comments: 20,
+      objectID: '2'
+    },
+  ]
+  return (
     <div>
       <h1>
-        Welcome to {getTitle ('React App')}
+        Welcome to {getTitle ('Hacker Stories')}
       </h1>
 
       <Try />
@@ -75,10 +75,11 @@ const App = () =>(
       <hr />
       {/*want to display array below */}
       {/*List one */}
-      <List />
+      <List list={stories}/>
       {/*List two */}
-      <List />
+      <List list ={stories}/>
     </div>
-  );
+  )
+};
 
 export default App;
