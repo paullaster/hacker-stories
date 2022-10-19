@@ -56,20 +56,28 @@ const Item = (props) => {
 const App = () => {
   const stories = [
     {
-      title: "ExpressJs",
-      url: "http://expressjs.com/",
-      author: "expressjs",
-      points: 4,
-      num_comments: 10,
+      title: "Javascript",
+      url: "https://javascript.com/",
+      author: "Javascript Developer",
+      points: 104,
+      num_comments: 1000000,
       objectID: "1"
     },
     {
+      title: "ExpressJs",
+      url: "https://expressjs.com/",
+      author: "expressjs",
+      points: 4,
+      num_comments: 10,
+      objectID: "2"
+    },
+    {
       title: "NodeJs",
-      url: "http://nodejs.org/",
+      url: "https://nodejs.org/",
       author: "nodejs",
       points: 4,
       num_comments: 20,
-      objectID: "2"
+      objectID: "3"
     }
   ];
   return (
