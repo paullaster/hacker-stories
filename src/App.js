@@ -26,10 +26,13 @@ const list = [
 ];
 
 const Try = () => {
+  const handleChange = (event) => {
+    console.log (event.target.value);
+  }
   return (
     <div>
       <label htmlFor="try" > Yet a try:</label>
-      <input type="text" id="try" placeholder="Try again later" />
+      <input type="text" id="try" onChange={handleChange} placeholder="Try again later" />
     </div>
   );
 }
