@@ -6,6 +6,50 @@ function getTitle (title) {
   return title;
 };
 
+const listItem = [
+  {
+    title: 'ExpressJs',
+    url: 'http://expressjs.com/',
+    author: 'expressjs',
+    points: 4,
+    num_comments: 10,
+    ObjectId: '1'
+  },
+  {
+    title: 'NodeJs',
+    url: 'http://nodejs.org/',
+    author: 'nodejs',
+    points: 4,
+    num_comments: 20,
+    ObjectId: '2'
+  },
+];
+
+function outPut (item) {
+   return (
+    <li key={item.ObjectId}>
+      <span>
+        { item.title }
+      </span>
+      <br />
+      <span>
+        { item.url}
+      </span>
+      <br />
+      <span>
+        {item.author}
+      </span>
+      <br />
+      <span>
+        { item.points }
+      </span>
+      <br />
+      <span>
+        { item.num_comments }
+      </span>
+    </li>
+   );
+}
 function App() {
   return (
     <div>
@@ -15,6 +59,16 @@ function App() {
 
       <label htmlFor="try" > Yet a try:</label>
       <input type="text" id="try" placeholder="Try again later" />
+
+      <hr />
+      {/*want to display array below */}
+
+      <ul>
+        {
+          listItem.map (outPut)
+        }
+      </ul>
+
     </div>
   );
 }
