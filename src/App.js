@@ -34,12 +34,11 @@ const Try = () => {
   );
 }
 
-const List  = () => {
-  return (
+const List  = () =>(
     <ul>
       {
         list.map ( (item) => {
-          return (
+          return(
             <li key={item.objectID}>
                 <span>
                   <a href={item.url}> {item.title} </a>
@@ -56,15 +55,13 @@ const List  = () => {
                   {item.num_comments}
                 </span>
           </li>
-          );
-        })
+          );}
+        )
       }
     </ul>
   )
-};  
 
-const App = () => {
-  return (
+const App = () =>(
     <div>
       <h1>
         Welcome to {getTitle ('React App')}
@@ -80,6 +77,5 @@ const App = () => {
       <List />
     </div>
   );
-}
 
 export default App;
