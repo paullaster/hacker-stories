@@ -25,6 +25,15 @@ const list = [
   },
 ];
 
+function Try () {
+  return (
+    <div>
+      <label htmlFor="try" > Yet a try:</label>
+      <input type="text" id="try" placeholder="Try again later" />
+    </div>
+  );
+}
+
 function List () {
   return (
     <ul>
@@ -61,14 +70,14 @@ function App() {
         Welcome to {getTitle ('React App')}
       </h1>
 
-      <label htmlFor="try" > Yet a try:</label>
-      <input type="text" id="try" placeholder="Try again later" />
+      <Try />
 
       <hr />
       {/*want to display array below */}
-
+      {/*List one */}
       <List />
-
+      {/*List two */}
+      <List />
     </div>
   );
 }
