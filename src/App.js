@@ -8,14 +8,15 @@ function getTitle(title) {
 }
 
 const Try = (props) => {
+  const { search, onSearch} = props;
   return (
     <div>
       <label htmlFor="try"> Yet a try:</label>
       <input
         type="text"
         id="try"
-        value={props.search}
-        onChange={props.onSearch}
+        value={search}
+        onChange={onSearch}
         placeholder="Try again later"
       />
 
@@ -58,7 +59,7 @@ const Item = (props) => {
   );
 };
 const App = () => {
-  console.log ("changes")
+
   const stories = [
     {
       title: "Javascript",
@@ -95,7 +96,7 @@ const App = () => {
   const searchedText = stories.filter ( (story) => {
     return story.title.toLowerCase ().includes (searchText.toLowerCase ());
   });
-
+  console.log (searchedText)
   return (
     <div>
       <h1>
@@ -110,6 +111,8 @@ const App = () => {
       <List list={searchedText} />
       {/*List two */}
       <List list={searchedText} />
+
+      
     </div>
   );
 };
