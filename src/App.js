@@ -34,11 +34,7 @@ const List = ({list}) =>
       return (
         <Item 
         key={item.objectID} 
-        title={item.title} 
-        url={item.url}
-        author={item.author}
-        points={item.points}
-        num_comments={item.num_comments}
+        {...item}
         />
       );
     })}
