@@ -14,6 +14,7 @@ const Try = (props) => {
       <input
         type="text"
         id="try"
+        value={props.search}
         onChange={props.onSearch}
         placeholder="Try again later"
       />
@@ -57,6 +58,7 @@ const Item = (props) => {
   );
 };
 const App = () => {
+  console.log ("changes")
   const stories = [
     {
       title: "Javascript",
@@ -84,7 +86,7 @@ const App = () => {
     }
   ];
   //managin Try state
-  const [ searchText, setSearchText ] = React.useState ('');
+  const [ searchText, setSearchText ] = React.useState ('ExpressJs');
   const handleTry = (event) => {
     setSearchText (event.target.value);
   };
