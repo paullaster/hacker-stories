@@ -91,7 +91,7 @@ const App = () => {
 
   //Filtering the search text
   const searchedText = stories.filter ( (story) => {
-    return story.title.includes (searchText);
+    return story.title.toLowerCase ().includes (searchText.toLowerCase ());
   });
 
   return (
@@ -105,7 +105,7 @@ const App = () => {
       <hr />
       {/*want to display array below */}
       {/*List one */}
-      <List list={stories} />
+      <List list={searchedText} />
       {/*List two */}
       <List list={searchedText} />
     </div>
