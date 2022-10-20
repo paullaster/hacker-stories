@@ -7,11 +7,12 @@ function getTitle(title) {
   return title;
 }
 
-const Try = () => {
-  console.log (" Try renders")
+const Try = (props) => {
   const [ searchText, setSearchText] = React.useState ('');
   const handleChange = (event) => {
     setSearchText (event.target.value);
+
+    props.onSearch (event);
   };
   return (
     <div>
