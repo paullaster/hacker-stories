@@ -88,13 +88,18 @@ const App = () => {
       objectID: "3"
     }
   ];
+
+  const handleTry = (event) => {
+    console.log (event.target.value);
+  };
+
   return (
     <div>
       <h1>
         Welcome to {getTitle("Hacker Stories")}
       </h1>
 
-      <Try />
+      <Try onSearch={handleTry}/>
 
       <hr />
       {/*want to display array below */}
