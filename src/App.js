@@ -90,7 +90,8 @@ const App = () => {
     }
   ];
   //managin Try state
-  const [ searchText, setSearchText ] = React.useState ('ExpressJs');
+  const [ searchText, setSearchText ] = React.useState (
+    localStorage.getItem ('search') || 'ExpressJs');
   const handleTry = (event) => {
     setSearchText (event.target.value);
 
