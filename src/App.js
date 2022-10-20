@@ -7,8 +7,7 @@ function getTitle(title) {
   return title;
 }
 
-const Try = (props) => {
-  const { search, onSearch} = props;
+const Try = ({search, onSearch}) => {
   return (
     <div>
       <label htmlFor="try"> Yet a try:</label>
@@ -30,12 +29,9 @@ const Try = (props) => {
 
 const List = ({list}) =>
   <ul>
-    {list.map( (objectID, ...item) => {
+    {list.map( ({objectID, ...item}) => {
       return (
-        <Item 
-        key={objectID} 
-        {...item}
-        />
+        <Item key={objectID} {...item} />
       );
     })}
   </ul>;
@@ -92,6 +88,11 @@ const App = () => {
   //managin Try state
   const [ searchText, setSearchText ] = React.useState (
     localStorage.getItem ('search') || 'ExpressJs');
+
+  React.useEffect ( () => {
+    
+  })
+
   const handleTry = (event) => {
     setSearchText (event.target.value);
 
@@ -99,11 +100,12 @@ const App = () => {
     localStorage.setItem ( 'search', event.target.value);
   };
 
+
+
   //Filtering the search text
   const searchedText = stories.filter ( (story) => {
     return story.title.toLowerCase ().includes (searchText.toLowerCase ());
   });
-  console.log (searchedText)
   return (
     <div>
       <h1>
