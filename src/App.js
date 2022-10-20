@@ -17,6 +17,11 @@ const Try = (props) => {
         onChange={props.onSearch}
         placeholder="Try again later"
       />
+
+      <p>
+        Search for: <strong> {props.search} </strong>
+      </p>
+
     </div>
   );
 };
@@ -78,10 +83,16 @@ const App = () => {
       objectID: "3"
     }
   ];
+  //managin Try state
   const [ searchText, setSearchText ] = React.useState ('');
   const handleTry = (event) => {
     setSearchText (event.target.value);
   };
+
+  //Filtering the search text
+  const searchedText = stories.filter ( (story) => {
+    return story.title.includes (searchText);
+  });
 
   return (
     <div>
@@ -89,18 +100,14 @@ const App = () => {
         Welcome to {getTitle("Hacker Stories")}
       </h1>
 
-      <Try onSearch={handleTry} />
-
-      <p>
-        Search for: <strong> {searchText} </strong>
-      </p>
+      <Try onSearch={handleTry} search={searchText} />
 
       <hr />
       {/*want to display array below */}
       {/*List one */}
       <List list={stories} />
       {/*List two */}
-      <List list={stories} />
+      <List list={searchedText} />
     </div>
   );
 };
