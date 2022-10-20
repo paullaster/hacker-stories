@@ -32,28 +32,35 @@ const List = ({list}) =>
   <ul>
     {list.map(item => {
       return (
-        <Item key={item.objectID} item={item} />
+        <Item 
+        key={item.objectID} 
+        title={item.title} 
+        url={item.url}
+        author={item.author}
+        points={item.points}
+        num_comments={item.num_comments}
+        />
       );
     })}
   </ul>;
-const Item = ({item}) => {
+const Item = ({title, url, author, points, num_comments}) => {
   return (
     <li>
       <span>
-        <a href={item.url}>
-          {item.title}
+        <a href={url}>
+          {title}
         </a>
       </span>
       <br />
       <span>
-        {item.author}
+        {author}
       </span>
       <br />
       <span>
-        {item.points}
+        {points}
       </span>
       <span>
-        {item.num_comments}
+        {num_comments}
       </span>
     </li>
   );
