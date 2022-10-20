@@ -30,10 +30,10 @@ const Try = (props) => {
 
 const List = ({list}) =>
   <ul>
-    {list.map(item => {
+    {list.map( (objectID, ...item) => {
       return (
         <Item 
-        key={item.objectID} 
+        key={objectID} 
         {...item}
         />
       );
@@ -93,6 +93,9 @@ const App = () => {
   const [ searchText, setSearchText ] = React.useState ('ExpressJs');
   const handleTry = (event) => {
     setSearchText (event.target.value);
+
+    //saving the search text to localStorage
+    localStorage.setItem ( 'search', event.target.value);
   };
 
   //Filtering the search text
