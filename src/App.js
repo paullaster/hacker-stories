@@ -8,7 +8,7 @@ function getTitle(title) {
 }
 
 const Try = () => {
-  console.log ()
+  console.log (" Try renders")
   const [ searchText, setSearchText] = React.useState ('');
   const handleChange = (event) => {
     setSearchText (event.target.value);
