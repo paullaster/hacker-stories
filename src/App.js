@@ -8,26 +8,15 @@ function getTitle(title) {
 }
 
 const Try = (props) => {
-  const [ searchText, setSearchText] = React.useState ('');
-  const handleChange = (event) => {
-    setSearchText (event.target.value);
-
-    props.onSearch (event);
-  };
   return (
     <div>
       <label htmlFor="try"> Yet a try:</label>
       <input
         type="text"
         id="try"
-        onChange={handleChange}
+        onChange={props.onSearch}
         placeholder="Try again later"
       />
-
-
-      <p>
-        Searching for : <strong>{searchText}</strong>
-      </p>
     </div>
   );
 };
@@ -89,9 +78,9 @@ const App = () => {
       objectID: "3"
     }
   ];
-
+  const [ searchText, setSearchText ] = React.useState ('');
   const handleTry = (event) => {
-    console.log (event.target.value);
+    setSearchText (event.target.value);
   };
 
   return (
@@ -100,7 +89,11 @@ const App = () => {
         Welcome to {getTitle("Hacker Stories")}
       </h1>
 
-      <Try onSearch={handleTry}/>
+      <Try onSearch={handleTry} />
+
+      <p>
+        Search for: <strong> {searchText} </strong>
+      </p>
 
       <hr />
       {/*want to display array below */}
