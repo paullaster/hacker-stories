@@ -21,39 +21,39 @@ const Try = (props) => {
       />
 
       <p>
-        Search for: <strong> {props.search} </strong>
+        Search for: <strong> {search} </strong>
       </p>
 
     </div>
   );
 };
 
-const List = props =>
+const List = ({list}) =>
   <ul>
-    {props.list.map(item => {
+    {list.map(item => {
       return (
         <Item key={item.objectID} item={item} />
       );
     })}
   </ul>;
-const Item = (props) => {
+const Item = ({item}) => {
   return (
     <li>
       <span>
-        <a href={props.item.url}>
-          {props.item.title}
+        <a href={item.url}>
+          {item.title}
         </a>
       </span>
       <br />
       <span>
-        {props.item.author}
+        {item.author}
       </span>
       <br />
       <span>
-        {props.item.points}
+        {item.points}
       </span>
       <span>
-        {props.item.num_comments}
+        {item.num_comments}
       </span>
     </li>
   );
