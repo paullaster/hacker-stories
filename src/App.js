@@ -1,3 +1,4 @@
+import React from 'react';
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -7,8 +8,10 @@ function getTitle(title) {
 }
 
 const Try = () => {
-  const handleChange = event => {
-    console.log(event.target.value);
+  console.log ()
+  const [ searchText, setSearchText] = React.useState ('');
+  const handleChange = (event) => {
+    setSearchText (event.target.value);
   };
   return (
     <div>
@@ -19,6 +22,11 @@ const Try = () => {
         onChange={handleChange}
         placeholder="Try again later"
       />
+
+
+      <p>
+        Searching for : <strong>{searchText}</strong>
+      </p>
     </div>
   );
 };
