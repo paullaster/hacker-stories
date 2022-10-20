@@ -90,14 +90,13 @@ const App = () => {
     localStorage.getItem ('search') || 'ExpressJs');
 
   React.useEffect ( () => {
-    
-  })
+    //saving the search text to localStorage
+    localStorage.setItem ( 'search', searchText);
+  }, [searchText])
 
   const handleTry = (event) => {
     setSearchText (event.target.value);
 
-    //saving the search text to localStorage
-    localStorage.setItem ( 'search', event.target.value);
   };
 
 
