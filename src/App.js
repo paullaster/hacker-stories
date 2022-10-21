@@ -51,6 +51,7 @@ const Item = ({title, url, author, points, num_comments}) => {
       <span>
         {points}
       </span>
+      <br />
       <span>
         {num_comments}
       </span>
@@ -83,20 +84,47 @@ const App = () => {
       points: 4,
       num_comments: 20,
       objectID: "3"
-    }
+    },
+    {
+      title: "C#",
+      url: "https://learn.microsoft.com/en-us/dotnet/csharp/",
+      author: "microsoft",
+      points: 8,
+      num_comments: 200,
+      objectID: "4"
+    },
+    {
+      title: "C++",
+      url: "https://learn.microsoft.com/en-us/cpp/cpp/?view=msvc-170",
+      author: "microsoft",
+      points: 28,
+      num_comments: 20000,
+      objectID: "5"
+    },
   ];
   //managin Try state
-  const [ searchText, setSearchText ] = React.useState (
-    localStorage.getItem ('search') || 'ExpressJs');
+  //const [ searchText, setSearchText ] = React.useState (
+  //  localStorage.getItem ('search') || 'ExpressJs');
 
-  React.useEffect ( () => {
+  //React.useEffect ( () => {
     //saving the search text to localStorage
-    localStorage.setItem ( 'search', searchText);
-  }, [searchText])
+  //  localStorage.setItem ( 'search', searchText);
+  //}, [searchText])
+  //custom hook
+  const useSemiPersistentState = (key, initialState) => {
+    const [ value, setValue] = React.useState (
+      localStorage.getItem (key) || initialState,
+    );
+    React.useEffect ( () => {
+      localStorage.setItem (key, value);
+    }, [value, key]);
 
+    return [value, setValue];
+  };
+
+  const [searchText, setSearchText] = useSemiPersistentState ('search', 'ExpressJs');
   const handleTry = (event) => {
     setSearchText (event.target.value);
-
   };
 
 
