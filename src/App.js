@@ -9,7 +9,7 @@ function getTitle(title) {
 
 const Try = ({search, onSearch}) => {
   return (
-    <div>
+    <React.Fragment>
       <label htmlFor="try"> Yet a try:</label>
       <input
         type="text"
@@ -23,7 +23,7 @@ const Try = ({search, onSearch}) => {
         Search for: <strong> {search} </strong>
       </p>
 
-    </div>
+    </React.Fragment>
   );
 };
 
