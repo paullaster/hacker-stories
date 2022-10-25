@@ -7,20 +7,21 @@ function getTitle(title) {
   return title;
 }
 
-const Try = ({search, onSearch}) => {
+const InputWithLabel = ({id, label, value, onInputChange}) => {
   return (
     <React.Fragment>
-      <label htmlFor="try"> Yet a try:</label>
+      <label htmlFor={id}> {label}:</label>
+      &nbsp;
       <input
         type="text"
-        id="try"
-        value={search}
-        onChange={onSearch}
+        id={id}
+        value={value}
+        onChange={onInputChange}
         placeholder="Try again later"
       />
 
       <p>
-        Search for: <strong> {search} </strong>
+        Search for: <strong> {value} </strong>
       </p>
 
     </React.Fragment>
@@ -139,7 +140,12 @@ const App = () => {
         Welcome to {getTitle("Hacker Stories")}
       </h1>
 
-      <Try onSearch={handleTry} search={searchText} />
+      <InputWithLabel 
+      id="search"
+      label="search "
+      onInputChange={handleTry} 
+      value={searchText}
+       />
 
       <hr />
       {/*want to display array below */}
