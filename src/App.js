@@ -145,7 +145,9 @@ const App = () => {
       label="search:"
       onInputChange={handleTry} 
       value={searchText}>
-        Search:
+        <strong>
+          Search:
+        </strong>
       </InputWithLabel>
 
       <hr />
