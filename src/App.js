@@ -7,10 +7,10 @@ function getTitle(title) {
   return title;
 }
 
-const InputWithLabel = ({id, label, value, type='text', onInputChange}) => {
+const InputWithLabel = ({id, value, type='text', onInputChange, children}) => {
   return (
     <React.Fragment>
-      <label htmlFor={id}> {label}:</label>
+      <label htmlFor={id}> {children}</label>
       &nbsp;
       <input
         type={type}
@@ -142,10 +142,11 @@ const App = () => {
 
       <InputWithLabel 
       id="search"
-      label="search "
+      label="search:"
       onInputChange={handleTry} 
-      value={searchText}
-       />
+      value={searchText}>
+        Search:
+      </InputWithLabel>
 
       <hr />
       {/*want to display array below */}
