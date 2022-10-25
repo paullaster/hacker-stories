@@ -7,13 +7,13 @@ function getTitle(title) {
   return title;
 }
 
-const InputWithLabel = ({id, label, value, onInputChange}) => {
+const InputWithLabel = ({id, label, value, type='text', onInputChange}) => {
   return (
     <React.Fragment>
       <label htmlFor={id}> {label}:</label>
       &nbsp;
       <input
-        type="text"
+        type={type}
         id={id}
         value={value}
         onChange={onInputChange}
