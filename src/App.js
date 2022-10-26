@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from "./logo.svg";
 import "./App.css";
 
 //variables
@@ -8,6 +7,14 @@ function getTitle(title) {
 }
 
 const InputWithLabel = ({id, value, type='text', onInputChange, isFocused, children}) => {
+  const inputRef = React.useRef ();
+
+  React.useEffect ( () => {
+    if ( isFocused && inputRef.current) {
+      inputRef.current.focus ();
+    }
+  }, [isFocused]);
+
   return (
     <React.Fragment>
       <label htmlFor={id}> {children}</label>
@@ -18,7 +25,7 @@ const InputWithLabel = ({id, value, type='text', onInputChange, isFocused, child
         value={value}
         onChange={onInputChange}
         placeholder="Try again later"
-        autoFocus={isFocused}
+        ref={inputRef}
       />
 
       <p>
