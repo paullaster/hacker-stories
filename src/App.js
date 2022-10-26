@@ -7,7 +7,7 @@ function getTitle(title) {
   return title;
 }
 
-const InputWithLabel = ({id, value, type='text', onInputChange, children}) => {
+const InputWithLabel = ({id, value, type='text', onInputChange, isFocused, children}) => {
   return (
     <React.Fragment>
       <label htmlFor={id}> {children}</label>
@@ -18,6 +18,7 @@ const InputWithLabel = ({id, value, type='text', onInputChange, children}) => {
         value={value}
         onChange={onInputChange}
         placeholder="Try again later"
+        autoFocus={isFocused}
       />
 
       <p>
@@ -144,7 +145,9 @@ const App = () => {
       id="search"
       label="search:"
       onInputChange={handleTry} 
-      value={searchText}>
+      value={searchText}
+      isFocused
+      >
         <strong>
           Search:
         </strong>
