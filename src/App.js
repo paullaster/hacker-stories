@@ -69,7 +69,7 @@ const Item = ({title, url, author, points, num_comments}) => {
 };
 const App = () => {
 
-  const stories = [
+  const initialStories = [
     {
       title: "Javascript",
       url: "https://javascript.com/",
@@ -132,6 +132,9 @@ const App = () => {
   };
 
   const [searchText, setSearchText] = useSemiPersistentState ('search', 'ExpressJs');
+
+  const [stories, setStories] = React.useState (initialStories);
+
   const handleTry = (event) => {
     setSearchText (event.target.value);
   };
@@ -139,7 +142,7 @@ const App = () => {
 
 
   //Filtering the search text
-  const searchedText = stories.filter ( (story) => {
+  const searchedText = initialStories.filter ( (story) => {
     return story.title.toLowerCase ().includes (searchText.toLowerCase ());
   });
   return (
