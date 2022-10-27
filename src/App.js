@@ -36,33 +36,36 @@ const InputWithLabel = ({id, value, type='text', onInputChange, isFocused, child
   );
 };
 
-const List = ({list}) =>
+const List = ({list, onRemoveItem}) =>
   <ul>
-    {list.map( ({objectID, ...item}) => {
+    {list.map( (item) => {
       return (
-        <Item key={objectID} {...item} />
+        <Item key={item.objectID} item={item} onRemoveItem={onRemoveItem} />
       );
     })}
   </ul>;
-const Item = ({title, url, author, points, num_comments}) => {
+const Item = ({item, onRemoveItem}) => {
+  const handleRemoveItem = () => {
+    onRemoveItem (item)
+  };
   return (
     <li>
       <span>
-        <a href={url}>
-          {title}
+        <a href={item.url}>
+          {item.title}
         </a>
       </span>
       <br />
       <span>
-        {author}
+        {item.author}
       </span>
       <br />
       <span>
-        {points}
+        {item.points}
       </span>
       <br />
       <span>
-        {num_comments}
+        {item.num_comments}
       </span>
     </li>
   );
@@ -139,6 +142,12 @@ const App = () => {
     setSearchText (event.target.value);
   };
 
+  const handleRemovedStory = (item) => {
+    const newStories = initialStories.filter ( (story) => {
+      return item.objectID !== story.objectID
+    })
+    setStories (newStories);
+  };
 
 
   //Filtering the search text
@@ -166,9 +175,9 @@ const App = () => {
       <hr />
       {/*want to display array below */}
       {/*List one */}
-      <List list={searchedText} />
+      <List list={searchedText} onRemoveItem={handleRemovedStory} />
       {/*List two */}
-      <List list={searchedText} />
+      <List list={searchedText} onRemoveItem={handleRemovedStory} />
 
       
     </div>
