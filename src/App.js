@@ -45,31 +45,44 @@ const List = ({list, onRemoveItem}) =>
     })}
   </ul>;
 const Item = ({item, onRemoveItem}) => {
-  const handleRemoveItem = () => {
-    onRemoveItem (item)
-  };
   return (
-    <li>
-      <span>
-        <a href={item.url}>
-          {item.title}
-        </a>
-      </span>
-      <br />
-      <span>
-        {item.author}
-      </span>
-      <br />
-      <span>
-        {item.points}
-      </span>
-      <br />
-      <span>
-        {item.num_comments}
-      </span>
-    </li>
+    <React.Fragment>
+      <li>
+        <span>
+          <a href={item.url}>
+            {item.title}
+          </a>
+        </span>
+        <br />
+        <span>
+          {item.author}
+        </span>
+        <br />
+        <span>
+          {item.points}
+        </span>
+        <br />
+        <span>
+          {item.num_comments}
+        </span>
+     </li>
+
+    <Button onClick={ () => onRemoveItem (item) } >
+      Remove item
+    </Button>
+
+    </React.Fragment>
   );
 };
+
+const Button = ( {onClick, type="button", children} ) => {
+  return (
+    <button onClick={onClick} type={type}>
+      {children}
+    </button>
+  );
+};
+
 const App = () => {
 
   const initialStories = [
