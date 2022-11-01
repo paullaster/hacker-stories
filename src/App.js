@@ -147,9 +147,25 @@ const App = () => {
     return [value, setValue];
   };
 
+  const getAsyncStories = () => {
+    return new Promise ( (resolve) => {
+      return setTimeout (
+        () => {
+          return resolve ( {data: {stories: initialStories}} );
+        }, 2000
+      );
+    });
+  };
+
+  React.useEffect ( () => {
+    getAsyncStories ().then ( (result) => {
+      setStories (result.data.stories);
+    })
+  },[]);
+
   const [searchText, setSearchText] = useSemiPersistentState ('search', 'ExpressJs');
   
-  const [stories, setStories] = React.useState (initialStories);
+  const [stories, setStories] = React.useState ([]);
 
   const handleTry = (event) => {
     setSearchText (event.target.value);
