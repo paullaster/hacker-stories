@@ -67,7 +67,7 @@ const Item = ({item, onRemoveItem}) => {
         </span>
      </li>
 
-    <Button onClick={ () => onRemoveItem (item) } >
+    <Button onClick={ () => onRemoveItem (item.objectID) } >
       Remove item
     </Button>
 
@@ -148,23 +148,23 @@ const App = () => {
   };
 
   const [searchText, setSearchText] = useSemiPersistentState ('search', 'ExpressJs');
-
+  
   const [stories, setStories] = React.useState (initialStories);
 
   const handleTry = (event) => {
     setSearchText (event.target.value);
   };
 
-  const handleRemovedStory = (item) => {
-    const newStories = initialStories.filter ( (story) => {
-      return item.objectID !== story.objectID
-    })
+  const handleRemovedStory = (id) => {
+    const newStories = stories.filter ( (story) => {
+      return id !== story.objectID
+    });
     setStories (newStories);
   };
 
 
   //Filtering the search text
-  const searchedText = initialStories.filter ( (story) => {
+  const searchedText = stories.filter ( (story) => {
     return story.title.toLowerCase ().includes (searchText.toLowerCase ());
   });
   return (
@@ -188,9 +188,9 @@ const App = () => {
       <hr />
       {/*want to display array below */}
       {/*List one */}
-      <List list={searchedText} onRemoveItem={handleRemovedStory} />
+      <List list={searchedText}  onRemoveItem={handleRemovedStory} />
       {/*List two */}
-      <List list={searchedText} onRemoveItem={handleRemovedStory} />
+      <List list={searchedText}  onRemoveItem={handleRemovedStory} />
 
       
     </div>
