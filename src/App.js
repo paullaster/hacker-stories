@@ -157,15 +157,22 @@ const App = () => {
     });
   };
 
-  React.useEffect ( () => {
-    getAsyncStories ().then ( (result) => {
-      setStories (result.data.stories);
-    })
-  },[]);
-
   const [searchText, setSearchText] = useSemiPersistentState ('search', 'ExpressJs');
   
   const [stories, setStories] = React.useState ([]);
+  const [isLoading, setIsLoading] = React.useState (false);
+
+
+  React.useEffect ( () => {
+    
+    setIsLoading (true);
+
+    getAsyncStories ().then ( (result) => {
+      setStories (result.data.stories);
+
+      setIsLoading (false);
+    })
+  },[]);
 
   const handleTry = (event) => {
     setSearchText (event.target.value);
@@ -204,9 +211,18 @@ const App = () => {
       <hr />
       {/*want to display array below */}
       {/*List one */}
-      <List list={searchedText}  onRemoveItem={handleRemovedStory} />
-      {/*List two */}
-      <List list={searchedText}  onRemoveItem={handleRemovedStory} />
+      {
+        isLoading ? (
+          <p> Loading...</p>
+        ):
+        (
+        <>
+          <List list={searchedText}  onRemoveItem={handleRemovedStory} />
+
+          <List list={searchedText}  onRemoveItem={handleRemovedStory} />
+        </>
+        )
+      }
 
       
     </div>
