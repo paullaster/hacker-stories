@@ -161,7 +161,7 @@ const App = () => {
   
   const [stories, setStories] = React.useState ([]);
   const [isLoading, setIsLoading] = React.useState (false);
-
+  const [isError, setError] = React.useState (false)
 
   React.useEffect ( () => {
     
@@ -171,6 +171,8 @@ const App = () => {
       setStories (result.data.stories);
 
       setIsLoading (false);
+    }).catch ( (error) => {
+      return setError ( true);
     })
   },[]);
 
@@ -211,6 +213,7 @@ const App = () => {
       <hr />
       {/*want to display array below */}
       {/*List one */}
+      {isError && <p>Something went wrong...</p>}
       {
         isLoading ? (
           <p> Loading...</p>
