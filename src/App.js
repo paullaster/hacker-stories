@@ -7,7 +7,8 @@ const getTitle = (title) => {
 }
 const storiesReducer = ( state, action) => {
   switch (action.type) {
-
+    case 'SET_STORIES':
+      return action.payload
   }
 }
 
@@ -190,13 +191,10 @@ const App = () => {
     setSearchText (event.target.value);
   };
 
-  const handleRemovedStory = (id) => {
-    const newStories = stories.filter ( (story) => {
-      return id !== story.objectID
-    });
+  const handleRemovedStory = (item) => {
     dispatchStories ({
       type: 'REMOVE_STORY',
-      payload: newStories,
+      payload: item,
     });
   };
 
