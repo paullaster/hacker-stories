@@ -2,8 +2,13 @@ import React from 'react';
 import "./App.css";
 
 //variables
-function getTitle(title) {
+const getTitle = (title) => {
   return title;
+}
+const storiesReducer = ( state, action) => {
+  switch (action.type) {
+
+  }
 }
 
 const InputWithLabel = ({id, value, type='text', onInputChange, isFocused, children}) => {
@@ -159,7 +164,7 @@ const App = () => {
 
   const [searchText, setSearchText] = useSemiPersistentState ('search', 'ExpressJs');
   
-  const [stories, setStories] = React.useState ([]);
+  const [stories, dispatchStories] = React.useReducer ( storiesReducer, [] );
   const [isLoading, setIsLoading] = React.useState (false);
   const [isError, setError] = React.useState (false)
 
@@ -168,7 +173,12 @@ const App = () => {
     setIsLoading (true);
 
     getAsyncStories ().then ( (result) => {
-      setStories (result.data.stories);
+      dispatchStories (
+        {
+          type: 'SET_STORIES',
+          payload: result.data.stories,
+        }
+      );
 
       setIsLoading (false);
     }).catch ( (error) => {
@@ -184,7 +194,10 @@ const App = () => {
     const newStories = stories.filter ( (story) => {
       return id !== story.objectID
     });
-    setStories (newStories);
+    dispatchStories ({
+      type: 'REMOVE_STORY',
+      payload: newStories,
+    });
   };
 
 
