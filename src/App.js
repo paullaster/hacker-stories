@@ -8,7 +8,15 @@ const getTitle = (title) => {
 const storiesReducer = ( state, action) => {
   switch (action.type) {
     case 'SET_STORIES':
-      return action.payload
+      return action.payload;
+    case 'REMOVE_STORY':
+      return (
+        state.filter (
+          (story) => action.payload.objectID !== story.objectID
+        )
+      );
+    default:
+      throw new Error ( 'Invalid action type')
   }
 }
 
@@ -73,7 +81,7 @@ const Item = ({item, onRemoveItem}) => {
         </span>
      </li>
 
-    <Button onClick={ () => onRemoveItem (item.objectID) } >
+    <Button onClick={ () => onRemoveItem (item) } >
       Remove item
     </Button>
 
