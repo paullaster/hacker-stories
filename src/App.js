@@ -173,10 +173,12 @@ const App = () => {
 
   const [searchText, setSearchText] = useSemiPersistentState ('search', 'ExpressJs');
   
-  const [stories, dispatchStories] = React.useReducer ( storiesReducer, [] );
-  const [isLoading, setIsLoading] = React.useState (false);
-  const [isError, setError] = React.useState (false)
-
+  const [stories, dispatchStories] = React.useReducer (
+    storiesReducer, {
+      data: [],
+      isLoading: false,
+      isError: false,
+  } );
   React.useEffect ( () => {
     
     setIsLoading (true);
