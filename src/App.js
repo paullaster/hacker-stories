@@ -11,7 +11,7 @@ const storiesReducer = ( state, action) => {
       return action.payload;
     case 'REMOVE_STORY':
       return (
-        state.filter (
+        state.data.filter (
           (story) => action.payload.objectID !== story.objectID
         )
       );
@@ -181,7 +181,11 @@ const App = () => {
   } );
   React.useEffect ( () => {
     
-    setIsLoading (true);
+    dispatchStories(
+      {
+        type: 'STORIES_INIT',
+      }
+    )
 
     getAsyncStories ().then ( (result) => {
       dispatchStories (
