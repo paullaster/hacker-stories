@@ -256,9 +256,9 @@ const App = () => {
       <hr />
       {/*want to display array below */}
       {/*List one */}
-      {isError && <p>Something went wrong...</p>}
+      {stories.isError && <p>Something went wrong...</p>}
       {
-        isLoading ? (
+        stories.isLoading ? (
           <p> Loading...</p>
         ):
         (
