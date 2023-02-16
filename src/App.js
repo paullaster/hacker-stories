@@ -194,8 +194,6 @@ const App = () => {
           payload: result.data.stories,
         }
       );
-
-      setIsLoading (false);
     }).catch ( (error) => {
       return setError ( true);
     })
