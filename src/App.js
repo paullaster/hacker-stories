@@ -12,9 +12,15 @@ const storiesReducer = ( state, action) => {
         ...state,
         isLoading: true,
         isError: false,
-      }
+      };
     case 'SET_STORIES':
       return action.payload;
+    case 'STORIES_ERROR':
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+      };
     case 'REMOVE_STORY':
       return (
         state.data.filter (
