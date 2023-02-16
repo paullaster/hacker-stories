@@ -14,7 +14,12 @@ const storiesReducer = ( state, action) => {
         isError: false,
       };
     case 'SET_STORIES':
-      return action.payload;
+      return {
+        ...state,
+        data: action.payload,
+        isLoading: false,
+        isError: false,
+      };
     case 'STORIES_ERROR':
       return {
         ...state,
