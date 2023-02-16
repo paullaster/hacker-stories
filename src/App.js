@@ -195,7 +195,9 @@ const App = () => {
         }
       );
     }).catch ( (error) => {
-      return setError ( true);
+      return dispatchStories({
+        
+      })
     })
   },[]);
 
