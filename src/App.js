@@ -7,6 +7,12 @@ const getTitle = (title) => {
 }
 const storiesReducer = ( state, action) => {
   switch (action.type) {
+    case "STORIES_INIT":
+      return{
+        ...state,
+        isLoading: true,
+        isError: false,
+      }
     case 'SET_STORIES':
       return action.payload;
     case 'REMOVE_STORY':
