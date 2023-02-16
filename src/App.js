@@ -232,7 +232,7 @@ const App = () => {
 
 
   //Filtering the search text
-  const searchedText = stories.filter ( (story) => {
+  const searchedText = stories.data.filter ( (story) => {
     return story.title.toLowerCase ().includes (searchText.toLowerCase ());
   });
   return (
