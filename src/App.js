@@ -27,11 +27,12 @@ const storiesReducer = ( state, action) => {
         isError: true,
       };
     case 'REMOVE_STORY':
-      return (
-        state.data.filter (
+      return {
+        ...state,
+        data:state.data.filter (
           (story) => action.payload.objectID !== story.objectID
         )
-      );
+        };
     default:
       throw new Error ( 'Invalid action type')
   }
