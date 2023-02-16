@@ -196,7 +196,7 @@ const App = () => {
       );
     }).catch ( (error) => {
       return dispatchStories({
-        
+        type: 'STORIES_ERROR',
       })
     })
   },[]);
