@@ -223,7 +223,9 @@ const App = () => {
     setSearchTerm (event.target.value);
   };
 
-  const handleSearchSubmit = (event) => {}
+  const handleSearchSubmit = () => {
+    setUrl(`${API_ENDPOINT}${searchTerm}`);
+  }
 
   const handleRemovedStory = (item) => {
     dispatchStories ({
