@@ -192,9 +192,6 @@ const App = () => {
 
   //CREATING A MEMOIZED FUNCTION:
   const handleFetchedStories = React.useCallback( () => {
-    )
-
-  React.useEffect ( () => {
     if (!searchTerm) return;
     dispatchStories(
       {
@@ -216,7 +213,10 @@ const App = () => {
         type: 'STORIES_ERROR',
       });
     })
-  },[searchTerm]);
+  },[searchTerm])
+
+  React.useEffect ( () => {
+    );
 
   const handleTry = (event) => {
     setSearchTerm (event.target.value);
