@@ -239,7 +239,7 @@ const App = () => {
       id="search"
       label="search:"
       onInputChange={handleTry} 
-      value={searchText}
+      value={searchTerm}
       isFocused
       >
         <strong>
