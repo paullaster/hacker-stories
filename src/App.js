@@ -192,7 +192,7 @@ const App = () => {
 
   //CREATING A MEMOIZED FUNCTION:
   const handleFetchedStories = React.useCallback( () => {
-    if (!searchTerm) return;
+    // if (!searchTerm) return;
     dispatchStories(
       {
         type: 'STORIES_INIT',
