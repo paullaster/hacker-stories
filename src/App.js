@@ -243,7 +243,7 @@ const App = () => {
       <h1>
         Welcome to {getTitle("Hacker Stories")}
       </h1>
-      <form>
+      <form onSubmit={handleSearchSubmit}>
         <InputWithLabel 
         id="search"
         label="search:"
