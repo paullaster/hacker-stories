@@ -211,7 +211,7 @@ const App = () => {
         type: 'STORIES_ERROR',
       });
     })
-  },[]);
+  },[searchTerm]);
 
   const handleTry = (event) => {
     setSearchTerm (event.target.value);
