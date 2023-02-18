@@ -252,7 +252,9 @@ const App = () => {
           Search:
         </strong>
       </InputWithLabel>
-      <button>
+      <button
+      disabled={!searchTerm}
+      >
         submit
       </button>
       <hr />
