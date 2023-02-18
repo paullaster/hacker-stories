@@ -197,6 +197,7 @@ const App = () => {
       }
     )
 
+    fetch(`${API_ENDPOINT}react`)
     .then ( (result) => {
       dispatchStories (
         {
