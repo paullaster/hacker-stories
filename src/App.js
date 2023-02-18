@@ -200,8 +200,7 @@ const App = () => {
       }
     )
 
-    axios
-    .get(url)
+    const responseData = await axios.get(url)
     .then ( (responseData) => {
       dispatchStories (
         {
