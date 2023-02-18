@@ -179,15 +179,7 @@ const App = () => {
     return [value, setValue];
   };
 
-  const getAsyncStories = () => {
-    return new Promise ( (resolve) => {
-      return setTimeout (
-        () => {
-          return resolve ( {data: {stories: initialStories}} );
-        }, 2000
-      );
-    });
-  };
+  const API_ENDPOINT = '';
 
   const [searchText, setSearchText] = useSemiPersistentState ('search', 'ExpressJs');
   
