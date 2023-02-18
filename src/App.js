@@ -116,6 +116,10 @@ const Button = ( {onClick, type="button", children} ) => {
   );
 };
 
+const SearchForm = () => {
+
+};
+
 const App = () => {
 
   // const initialStories = [
