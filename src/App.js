@@ -179,7 +179,7 @@ const App = () => {
     return [value, setValue];
   };
 
-  const API_ENDPOINT = '';
+  const API_ENDPOINT = 'https://hn.algolia.com/api/v1/search?query=';
 
   const [searchText, setSearchText] = useSemiPersistentState ('search', 'ExpressJs');
   
