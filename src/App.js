@@ -214,7 +214,7 @@ const App = () => {
   },[]);
 
   const handleTry = (event) => {
-    setSearchText (event.target.value);
+    setSearchTerm (event.target.value);
   };
 
   const handleRemovedStory = (item) => {
