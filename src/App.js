@@ -197,7 +197,7 @@ const App = () => {
       }
     )
 
-    fetch(`${API_ENDPOINT}react`)
+    fetch(`${API_ENDPOINT}${searchTerm}`)
     .then ( (response) => response.json())
     .then ( (responseData) => {
       dispatchStories (
