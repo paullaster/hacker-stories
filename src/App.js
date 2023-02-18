@@ -200,17 +200,17 @@ const App = () => {
       }
     )
     try{
-    const responseData = await axios.get(url)
+      const responseData = await axios.get(url)
       dispatchStories (
         {
-          type: 'SET_STORIES',
-          payload: responseData.data.hits,
+            type: 'SET_STORIES',
+            payload: responseData.data.hits,
         }
       );
       }catch{
-      return dispatchStories({
-        type: 'STORIES_ERROR',
-      });
+        return dispatchStories({
+          type: 'STORIES_ERROR',
+        });
     }
   },[url])
 
