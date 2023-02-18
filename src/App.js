@@ -197,7 +197,7 @@ const App = () => {
       }
     )
 
-    getAsyncStories().then ( (result) => {
+    .then ( (result) => {
       dispatchStories (
         {
           type: 'SET_STORIES',
