@@ -223,6 +223,8 @@ const App = () => {
     setSearchTerm (event.target.value);
   };
 
+  const handleSearchSubmit = (event) => {}
+
   const handleRemovedStory = (item) => {
     dispatchStories ({
       type: 'REMOVE_STORY',
