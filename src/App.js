@@ -203,7 +203,7 @@ const App = () => {
       dispatchStories (
         {
           type: 'SET_STORIES',
-          payload: result.data.stories,
+          payload: responseData.hits,
         }
       );
     }).catch ( (error) => {
