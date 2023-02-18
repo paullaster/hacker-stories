@@ -207,11 +207,11 @@ const App = () => {
           payload: responseData.data.hits,
         }
       );
-      }catch ( (error) => {
+      }catch(error){
       return dispatchStories({
         type: 'STORIES_ERROR',
       });
-    })
+    }
   },[url])
 
   React.useEffect ( () => {
