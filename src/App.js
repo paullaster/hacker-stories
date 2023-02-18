@@ -200,7 +200,8 @@ const App = () => {
       }
     )
 
-    fetch(url)
+    axios
+    .get(url)
     .then ( (response) => response.json())
     .then ( (responseData) => {
       dispatchStories (
