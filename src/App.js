@@ -270,6 +270,8 @@ const App = () => {
       </h1>
       <SearchForm
       searchTerm={searchTerm}
+      handleTry={handleTry}
+      handleSearchSubmit={handleSearchSubmit}
       />
       <hr />
       {/*want to display array below */}
