@@ -213,7 +213,7 @@ const App = () => {
         type: 'STORIES_ERROR',
       });
     })
-  },[searchTerm])
+  },[url])
 
   React.useEffect ( () => {
     handleFetchedStories ();
