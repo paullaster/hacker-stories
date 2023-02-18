@@ -222,8 +222,9 @@ const App = () => {
     setSearchTerm (event.target.value);
   };
 
-  const handleSearchSubmit = () => {
+  const handleSearchSubmit = (event) => {
     setUrl(`${API_ENDPOINT}${searchTerm}`);
+    event.preventDefault();
   }
 
   const handleRemovedStory = (item) => {
