@@ -118,7 +118,25 @@ const Button = ( {onClick, type="button", children} ) => {
 
 const SearchForm = () => {
   return (
-
+    <form onSubmit={handleSearchSubmit}>
+        <InputWithLabel 
+        id="search"
+        label="search:"
+        onInputChange={handleTry} 
+        value={searchTerm}
+        isFocused
+        >
+          <strong>
+            Search:
+          </strong>
+        </InputWithLabel>
+        <button
+          type='submit'
+          disabled={!searchTerm}
+        >
+          submit
+        </button>
+      </form>
   )
 };
 
@@ -250,25 +268,7 @@ const App = () => {
       <h1>
         Welcome to {getTitle("Hacker Stories")}
       </h1>
-      <form onSubmit={handleSearchSubmit}>
-        <InputWithLabel 
-        id="search"
-        label="search:"
-        onInputChange={handleTry} 
-        value={searchTerm}
-        isFocused
-        >
-          <strong>
-            Search:
-          </strong>
-        </InputWithLabel>
-        <button
-          type='submit'
-          disabled={!searchTerm}
-        >
-          submit
-        </button>
-      </form>
+      
 
       <hr />
       {/*want to display array below */}
