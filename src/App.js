@@ -202,12 +202,11 @@ const App = () => {
 
     axios
     .get(url)
-    .then ( (response) => response.json())
     .then ( (responseData) => {
       dispatchStories (
         {
           type: 'SET_STORIES',
-          payload: responseData.hits,
+          payload: responseData.data.hits,
         }
       );
     }).catch ( (error) => {
