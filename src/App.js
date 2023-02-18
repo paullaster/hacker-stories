@@ -257,9 +257,7 @@ const App = () => {
         ):
         (
         <>
-          <List list={searchedText}  onRemoveItem={handleRemovedStory} />
-
-          <List list={searchedText}  onRemoveItem={handleRemovedStory} />
+          <List list={stories.data}  onRemoveItem={handleRemovedStory} />
         </>
         )
       }
