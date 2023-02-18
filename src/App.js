@@ -255,6 +255,7 @@ const App = () => {
         </strong>
       </InputWithLabel>
       <button
+      type='button'
       disabled={!searchTerm}
       onClick={handleSearchSubmit}
       >
