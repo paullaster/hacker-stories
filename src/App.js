@@ -116,7 +116,7 @@ const Button = ( {onClick, type="button", children} ) => {
   );
 };
 
-const SearchForm = () => {
+const SearchForm = ({searchTerm, handleTry, handleSearchSubmit}) => {
   return (
     <form onSubmit={handleSearchSubmit}>
         <InputWithLabel 
