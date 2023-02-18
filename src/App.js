@@ -226,9 +226,9 @@ const App = () => {
 
 
   //Filtering the search text
-  const searchedText = stories.data.filter ( (story) => {
-    return story.title.toLowerCase ().includes (searchText.toLowerCase ());
-  });
+  // const searchedTerm = stories.data.filter ( (story) => {
+  //   return story.title.toLowerCase ().includes (searchText.toLowerCase ());
+  // });
   return (
     <div>
       <h1>
