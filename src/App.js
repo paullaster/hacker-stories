@@ -268,8 +268,9 @@ const App = () => {
       <h1>
         Welcome to {getTitle("Hacker Stories")}
       </h1>
-      
-
+      <SearchForm
+      searchTerm={searchTerm}
+      />
       <hr />
       {/*want to display array below */}
       {/*List one */}
