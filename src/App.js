@@ -252,7 +252,9 @@ const App = () => {
           Search:
         </strong>
       </InputWithLabel>
-
+      <button>
+        submit
+      </button>
       <hr />
       {/*want to display array below */}
       {/*List one */}
