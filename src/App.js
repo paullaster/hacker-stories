@@ -182,9 +182,7 @@ const App = () => {
   const API_ENDPOINT = 'https://hn.algolia.com/api/v1/search?query=';
 
   const [searchTerm, setSearchTerm] = useSemiPersistentState ('search', 'ExpressJs');
-  const [url, setUrl] = React.useState(
-    
-  )
+  const [url, setUrl] = React.useState(`${API_ENDPOINT}${searchTerm}`);
   const [stories, dispatchStories] = React.useReducer (
     storiesReducer, {
       data: [],
