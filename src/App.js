@@ -216,7 +216,8 @@ const App = () => {
   },[searchTerm])
 
   React.useEffect ( () => {
-    );
+    handleFetchedStories ();
+  },[handleFetchedStories]);
 
   const handleTry = (event) => {
     setSearchTerm (event.target.value);
