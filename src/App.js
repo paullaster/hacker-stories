@@ -199,7 +199,7 @@ const App = () => {
 
     fetch(`${API_ENDPOINT}react`)
     .then ( (response) => response.json())
-    .then ( (result) => {
+    .then ( (responseData) => {
       dispatchStories (
         {
           type: 'SET_STORIES',
