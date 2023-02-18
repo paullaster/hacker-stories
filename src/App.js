@@ -117,48 +117,48 @@ const Button = ( {onClick, type="button", children} ) => {
 
 const App = () => {
 
-  const initialStories = [
-    {
-      title: "Javascript",
-      url: "https://javascript.com/",
-      author: "Javascript Developer",
-      points: 104,
-      num_comments: 1000000,
-      objectID: "1"
-    },
-    {
-      title: "ExpressJs",
-      url: "https://expressjs.com/",
-      author: "expressjs",
-      points: 4,
-      num_comments: 10,
-      objectID: "2"
-    },
-    {
-      title: "NodeJs",
-      url: "https://nodejs.org/",
-      author: "nodejs",
-      points: 4,
-      num_comments: 20,
-      objectID: "3"
-    },
-    {
-      title: "C#",
-      url: "https://learn.microsoft.com/en-us/dotnet/csharp/",
-      author: "microsoft",
-      points: 8,
-      num_comments: 200,
-      objectID: "4"
-    },
-    {
-      title: "C++",
-      url: "https://learn.microsoft.com/en-us/cpp/cpp/?view=msvc-170",
-      author: "microsoft",
-      points: 28,
-      num_comments: 20000,
-      objectID: "5"
-    },
-  ];
+  // const initialStories = [
+  //   {
+  //     title: "Javascript",
+  //     url: "https://javascript.com/",
+  //     author: "Javascript Developer",
+  //     points: 104,
+  //     num_comments: 1000000,
+  //     objectID: "1"
+  //   },
+  //   {
+  //     title: "ExpressJs",
+  //     url: "https://expressjs.com/",
+  //     author: "expressjs",
+  //     points: 4,
+  //     num_comments: 10,
+  //     objectID: "2"
+  //   },
+  //   {
+  //     title: "NodeJs",
+  //     url: "https://nodejs.org/",
+  //     author: "nodejs",
+  //     points: 4,
+  //     num_comments: 20,
+  //     objectID: "3"
+  //   },
+  //   {
+  //     title: "C#",
+  //     url: "https://learn.microsoft.com/en-us/dotnet/csharp/",
+  //     author: "microsoft",
+  //     points: 8,
+  //     num_comments: 200,
+  //     objectID: "4"
+  //   },
+  //   {
+  //     title: "C++",
+  //     url: "https://learn.microsoft.com/en-us/cpp/cpp/?view=msvc-170",
+  //     author: "microsoft",
+  //     points: 28,
+  //     num_comments: 20000,
+  //     objectID: "5"
+  //   },
+  // ];
   //managin Try state
   //const [ searchText, setSearchText ] = React.useState (
   //  localStorage.getItem ('search') || 'ExpressJs');
