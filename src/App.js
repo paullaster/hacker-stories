@@ -244,24 +244,7 @@ const App = () => {
         Welcome to {getTitle("Hacker Stories")}
       </h1>
 
-      <InputWithLabel 
-      id="search"
-      label="search:"
-      onInputChange={handleTry} 
-      value={searchTerm}
-      isFocused
-      >
-        <strong>
-          Search:
-        </strong>
-      </InputWithLabel>
-      <button
-      type='button'
-      disabled={!searchTerm}
-      onClick={handleSearchSubmit}
-      >
-        submit
-      </button>
+      
       <hr />
       {/*want to display array below */}
       {/*List one */}
