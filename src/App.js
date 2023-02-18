@@ -189,6 +189,11 @@ const App = () => {
       isLoading: false,
       isError: false,
   } );
+
+  //CREATING A MEMOIZED FUNCTION:
+  const handleFetchedStories = React.useCallback( () => {
+    )
+
   React.useEffect ( () => {
     if (!searchTerm) return;
     dispatchStories(
