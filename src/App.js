@@ -201,7 +201,6 @@ const App = () => {
     )
 
     const responseData = await axios.get(url)
-    .then ( (responseData) => {
       dispatchStories (
         {
           type: 'SET_STORIES',
