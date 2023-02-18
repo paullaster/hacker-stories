@@ -199,7 +199,7 @@ const App = () => {
         type: 'STORIES_INIT',
       }
     )
-
+    try{
     const responseData = await axios.get(url)
       dispatchStories (
         {
@@ -207,8 +207,7 @@ const App = () => {
           payload: responseData.data.hits,
         }
       );
-      
-      .catch ( (error) => {
+      }catch ( (error) => {
       return dispatchStories({
         type: 'STORIES_ERROR',
       });
