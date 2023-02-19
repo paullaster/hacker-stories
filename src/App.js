@@ -8,10 +8,10 @@ import { ReactComponent as Check } from './check.svg';
 const getTitle = (title) => {
   return title;
 }
-const storiesReducer = ( state, action) => {
+const storiesReducer = (state, action) => {
   switch (action.type) {
     case "STORIES_INIT":
-      return{
+      return {
         ...state,
         isLoading: true,
         isError: false,
@@ -32,21 +32,21 @@ const storiesReducer = ( state, action) => {
     case 'REMOVE_STORY':
       return {
         ...state,
-        data:state.data.filter (
+        data: state.data.filter(
           (story) => action.payload.objectID !== story.objectID
         )
-        };
+      };
     default:
-      throw new Error ( 'Invalid action type')
+      throw new Error('Invalid action type')
   }
 }
 
-const InputWithLabel = ({id, value, type='text', onInputChange, isFocused, children}) => {
-  const inputRef = React.useRef ();
+const InputWithLabel = ({ id, value, type = 'text', onInputChange, isFocused, children }) => {
+  const inputRef = React.useRef();
 
-  React.useEffect ( () => {
-    if ( isFocused && inputRef.current) {
-      inputRef.current.focus ();
+  React.useEffect(() => {
+    if (isFocused && inputRef.current) {
+      inputRef.current.focus();
     }
   }, [isFocused]);
 
@@ -72,47 +72,47 @@ const InputWithLabel = ({id, value, type='text', onInputChange, isFocused, child
   );
 };
 
-const List = ({list, onRemoveItem}) =>
+const List = ({ list, onRemoveItem }) =>
   <ul>
-    {list.map( (item) => {
+    {list.map((item) => {
       return (
         <Item key={item.objectID} item={item} onRemoveItem={onRemoveItem} />
       );
     })}
   </ul>;
-const Item = ({item, onRemoveItem}) => {
+const Item = ({ item, onRemoveItem }) => {
   return (
     <React.Fragment>
       <li className={styles.item}>
-        <span style={{width: '40%'}}>
+        <span style={{ width: '40%' }}>
           <a href={item.url}>
             {item.title}
           </a>
         </span>
         <br />
-        <span style={{width: '30%'}}>
+        <span style={{ width: '30%' }}>
           {item.author}
         </span>
         <br />
-        <span style={{width: '10%'}}>
+        <span style={{ width: '10%' }}>
           {item.points}
         </span>
         <br />
-        <span style={{width: '10%'}}>
+        <span style={{ width: '10%' }}>
           {item.num_comments}
         </span>
-        <span style={{width: '10%'}}>
-          <Button onClick={ () => onRemoveItem (item) } >
-            <Check  width="20px" height="20px"/>
+        <span style={{ width: '10%' }}>
+          <Button onClick={() => onRemoveItem(item)} >
+            <Check width="20px" height="20px" />
           </Button>
         </span>
-     </li>
+      </li>
 
     </React.Fragment>
   );
 };
 
-const Button = ( {onClick, type="button", children} ) => {
+const Button = ({ onClick, type = "button", children }) => {
   return (
     <button onClick={onClick} type={type} className={classNames(styles.button, styles.buttonSmall)}>
       {children}
@@ -120,28 +120,28 @@ const Button = ( {onClick, type="button", children} ) => {
   );
 };
 
-const SearchForm = ({searchTerm, handleTry, handleSearchSubmit}) => {
+const SearchForm = ({ searchTerm, handleTry, handleSearchSubmit }) => {
   return (
     <form onSubmit={handleSearchSubmit} className={styles.searchForm}>
-        <InputWithLabel 
+      <InputWithLabel
         id="search"
         label="search:"
-        onInputChange={handleTry} 
+        onInputChange={handleTry}
         value={searchTerm}
         isFocused
-        >
-          <strong>
-            Search:
-          </strong>
-        </InputWithLabel>
-        <button
-          type='submit'
-          disabled={!searchTerm}
-          className={classNames(styles.button, styles.buttonLarge)}
-        >
-          submit
-        </button>
-      </form>
+      >
+        <strong>
+          Search:
+        </strong>
+      </InputWithLabel>
+      <button
+        type='submit'
+        disabled={!searchTerm}
+        className={classNames(styles.button, styles.buttonLarge)}
+      >
+        submit
+      </button>
+    </form>
   )
 };
 
@@ -194,20 +194,21 @@ const App = () => {
   //  localStorage.getItem ('search') || 'ExpressJs');
 
   //React.useEffect ( () => {
-    //saving the search text to localStorage
+  //saving the search text to localStorage
   //  localStorage.setItem ( 'search', searchText);
   //}, [searchText])
   //custom hook
   const useSemiPersistentState = (key, initialState) => {
     const isMounted = React.useRef(false);
-    const [ value, setValue] = React.useState (
-      localStorage.getItem (key) || initialState,
+    const [value, setValue] = React.useState(
+      localStorage.getItem(key) || initialState,
     );
-    React.useEffect ( () => {
-      if(!isMounted.current){
+    React.useEffect(() => {
+      if (!isMounted.current) {
         isMounted.current = true;
+      } else {
+        localStorage.setItem(key, value);
       }
-      localStorage.setItem (key, value);
     }, [value, key]);
 
     return [value, setValue];
@@ -215,44 +216,44 @@ const App = () => {
 
   const API_ENDPOINT = 'https://hn.algolia.com/api/v1/search?query=';
 
-  const [searchTerm, setSearchTerm] = useSemiPersistentState ('search', 'ExpressJs');
+  const [searchTerm, setSearchTerm] = useSemiPersistentState('search', 'ExpressJs');
   const [URL, setURL] = React.useState(`${API_ENDPOINT}${searchTerm}`);
-  const [stories, dispatchStories] = React.useReducer (
+  const [stories, dispatchStories] = React.useReducer(
     storiesReducer, {
-      data: [],
-      isLoading: false,
-      isError: false,
-  } );
+    data: [],
+    isLoading: false,
+    isError: false,
+  });
 
   //CREATING A MEMOIZED FUNCTION:
-  const handleFetchedStories = React.useCallback( async () => {
+  const handleFetchedStories = React.useCallback(async () => {
     // if (!searchTerm) return;
     dispatchStories(
       {
         type: 'STORIES_INIT',
       }
     )
-    try{
+    try {
       const responseData = await axios.get(URL)
-      dispatchStories (
+      dispatchStories(
         {
-            type: 'SET_STORIES',
-            payload: responseData.data.hits,
+          type: 'SET_STORIES',
+          payload: responseData.data.hits,
         }
       );
-      }catch{
-        return dispatchStories({
-          type: 'STORIES_ERROR',
-        });
+    } catch {
+      return dispatchStories({
+        type: 'STORIES_ERROR',
+      });
     }
-  },[URL])
+  }, [URL])
 
-  React.useEffect ( () => {
-    handleFetchedStories ();
-  },[handleFetchedStories]);
+  React.useEffect(() => {
+    handleFetchedStories();
+  }, [handleFetchedStories]);
 
   const handleTry = (event) => {
-    setSearchTerm (event.target.value);
+    setSearchTerm(event.target.value);
   };
 
   const handleSearchSubmit = (event) => {
@@ -261,7 +262,7 @@ const App = () => {
   }
 
   const handleRemovedStory = (item) => {
-    dispatchStories ({
+    dispatchStories({
       type: 'REMOVE_STORY',
       payload: item,
     });
@@ -278,9 +279,9 @@ const App = () => {
         Welcome to {getTitle("Hacker Stories")}
       </h1>
       <SearchForm
-      searchTerm={searchTerm}
-      handleTry={handleTry}
-      handleSearchSubmit={handleSearchSubmit}
+        searchTerm={searchTerm}
+        handleTry={handleTry}
+        handleSearchSubmit={handleSearchSubmit}
       />
 
       {/*want to display array below */}
@@ -289,15 +290,15 @@ const App = () => {
       {
         stories.isLoading ? (
           <p> Loading...</p>
-        ):
-        (
-        <>
-          <List list={stories.data}  onRemoveItem={handleRemovedStory} />
-        </>
-        )
+        ) :
+          (
+            <>
+              <List list={stories.data} onRemoveItem={handleRemovedStory} />
+            </>
+          )
       }
 
-      
+
     </div>
   );
 };
