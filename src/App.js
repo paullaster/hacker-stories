@@ -150,7 +150,7 @@ const SearchForm = ({ searchTerm, handleTry, handleSearchSubmit }) => {
 const getSumComments = (stories) => {
   return stories.data.reduce( (result, value) => {
     return result + value.num_comments;
-  })
+  }, 0)
 }
 
 const App = () => {
