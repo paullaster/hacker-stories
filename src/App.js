@@ -72,7 +72,7 @@ const InputWithLabel = ({ id, value, type = 'text', onInputChange, isFocused, ch
   );
 };
 
-const List = ({ list, onRemoveItem }) =>
+const List = React.memo(({ list, onRemoveItem }) =>
   console.log("B: List") ||
   <ul>
     {list.map((item) => {
@@ -80,7 +80,8 @@ const List = ({ list, onRemoveItem }) =>
         <Item key={item.objectID} item={item} onRemoveItem={onRemoveItem} />
       );
     })}
-  </ul>;
+  </ul>
+);
 const Item = ({ item, onRemoveItem }) => {
   return (
     <React.Fragment>
