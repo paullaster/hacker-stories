@@ -119,7 +119,7 @@ const Button = ( {onClick, type="button", children} ) => {
 
 const SearchForm = ({searchTerm, handleTry, handleSearchSubmit}) => {
   return (
-    <form onSubmit={handleSearchSubmit}>
+    <form onSubmit={handleSearchSubmit} className='search-form'>
         <InputWithLabel 
         id="search"
         label="search:"
