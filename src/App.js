@@ -83,6 +83,7 @@ const List = React.memo(({ list, onRemoveItem }) =>
   </ul>
 );
 const Item = ({ item, onRemoveItem }) => {
+  console.log("D: item" + item.objectID)
   return (
     <React.Fragment>
       <li className={styles.item}>
