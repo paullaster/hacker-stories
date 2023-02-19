@@ -82,7 +82,7 @@ const List = React.memo(({ list, onRemoveItem }) =>
     })}
   </ul>
 );
-const Item = ({ item, onRemoveItem }) => {
+const Item = React.memo(({ item, onRemoveItem }) => {
   console.log("D: item" + item.objectID)
   return (
     <React.Fragment>
@@ -113,7 +113,7 @@ const Item = ({ item, onRemoveItem }) => {
 
     </React.Fragment>
   );
-};
+});
 
 const Button = ({ onClick, type = "button", children }) => {
   return (
