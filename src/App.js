@@ -136,7 +136,7 @@ const SearchForm = ({searchTerm, handleTry, handleSearchSubmit}) => {
         <button
           type='submit'
           disabled={!searchTerm}
-          className='button button_large'
+          className={classNames(styles.button, styles.buttonLarge)}
         >
           submit
         </button>
