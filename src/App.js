@@ -147,6 +147,10 @@ const SearchForm = ({ searchTerm, handleTry, handleSearchSubmit }) => {
   )
 };
 
+const getSumComments = (stories) => {
+  
+}
+
 const App = () => {
 
   // const initialStories = [
