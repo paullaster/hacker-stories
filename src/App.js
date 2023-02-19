@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import styles from "./App.module.css";
 import classNames from 'classnames';
-import { Component as check } from './check.svg';
+import { Component as Check } from './check.svg';
 
 //variables
 const getTitle = (title) => {
@@ -103,7 +103,7 @@ const Item = ({item, onRemoveItem}) => {
         </span>
         <span style={{width: '10%'}}>
           <Button onClick={ () => onRemoveItem (item) } >
-            Remove item
+            <Remove item>
           </Button>
         </span>
      </li>
