@@ -80,7 +80,7 @@ const List = ({list, onRemoveItem}) =>
 const Item = ({item, onRemoveItem}) => {
   return (
     <React.Fragment>
-      <li>
+      <li className='item'>
         <span>
           <a href={item.url}>
             {item.title}
