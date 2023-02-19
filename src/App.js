@@ -204,6 +204,9 @@ const App = () => {
       localStorage.getItem (key) || initialState,
     );
     React.useEffect ( () => {
+      if(!isMounted.current){
+        isMounted.current = true;
+      }
       localStorage.setItem (key, value);
     }, [value, key]);
 
