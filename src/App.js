@@ -286,7 +286,7 @@ const sumComment = getSumComments(stories);
   return (
     <div className={styles.container}>
       <h1 className={styles.headlinePrimary}>
-        Welcome to {getTitle("Hacker Stories")}
+        Welcome to {getTitle("Hacker Stories")} with {sumComment} comments
       </h1>
       <SearchForm
         searchTerm={searchTerm}
