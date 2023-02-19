@@ -59,7 +59,7 @@ const InputWithLabel = ({id, value, type='text', onInputChange, isFocused, child
         onChange={onInputChange}
         placeholder="Try again later"
         ref={inputRef}
-        className='input'
+        className={styles.input}
       />
 
       <p>
