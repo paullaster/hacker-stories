@@ -267,10 +267,10 @@ const App = () => {
     setSearchTerm(event.target.value);
   };
 
-  const handleSearchSubmit = (event) => {
+  const handleSearchSubmit = React.useCallback((event) => {
     setURL(`${API_ENDPOINT}${searchTerm}`);
     event.preventDefault();
-  }
+  }, [])
 
   const handleRemovedStory = React.useCallback((item) => {
     dispatchStories({
