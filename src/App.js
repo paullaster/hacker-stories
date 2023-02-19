@@ -73,6 +73,7 @@ const InputWithLabel = ({ id, value, type = 'text', onInputChange, isFocused, ch
 };
 
 const List = ({ list, onRemoveItem }) =>
+  console.log("B: List") ||
   <ul>
     {list.map((item) => {
       return (
