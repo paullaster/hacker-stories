@@ -122,7 +122,8 @@ const Button = ({ onClick, type = "button", children }) => {
   );
 };
 
-const SearchForm = ({ searchTerm, handleTry, handleSearchSubmit }) => {
+const SearchForm = React.memo(({ searchTerm, handleTry, handleSearchSubmit }) => {
+  console.log("C: form")
   return (
     <form onSubmit={handleSearchSubmit} className={styles.searchForm}>
       <InputWithLabel
@@ -145,7 +146,7 @@ const SearchForm = ({ searchTerm, handleTry, handleSearchSubmit }) => {
       </button>
     </form>
   )
-};
+});
 
 const getSumComments = (stories) => {
   return stories.data.reduce( (result, value) => {
