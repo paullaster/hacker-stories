@@ -121,7 +121,7 @@ const Button = ( {onClick, type="button", children} ) => {
 
 const SearchForm = ({searchTerm, handleTry, handleSearchSubmit}) => {
   return (
-    <form onSubmit={handleSearchSubmit} className='search-form'>
+    <form onSubmit={handleSearchSubmit} className={styles.searchForm}>
         <InputWithLabel 
         id="search"
         label="search:"
