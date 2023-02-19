@@ -50,7 +50,7 @@ const InputWithLabel = ({id, value, type='text', onInputChange, isFocused, child
 
   return (
     <React.Fragment>
-      <label htmlFor={id} className='label'> {children}</label>
+      <label htmlFor={id} className={styles.label}> {children}</label>
       &nbsp;
       <input
         type={type}
