@@ -264,7 +264,7 @@ const App = () => {
   //   return story.title.toLowerCase ().includes (searchText.toLowerCase ());
   // });
   return (
-    <div>
+    <div className='container'>
       <h1>
         Welcome to {getTitle("Hacker Stories")}
       </h1>
@@ -273,7 +273,7 @@ const App = () => {
       handleTry={handleTry}
       handleSearchSubmit={handleSearchSubmit}
       />
-      <hr />
+      
       {/*want to display array below */}
       {/*List one */}
       {stories.isError && <p>Something went wrong...</p>}
