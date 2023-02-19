@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import styles from "./App.module.css";
 import classNames from 'classnames';
+import { Component as check } from './check.svg';
 
 //variables
 const getTitle = (title) => {
