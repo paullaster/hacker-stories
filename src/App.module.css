@@ -37,6 +37,8 @@
   color: black;
 }
 .button:hover > svg > g {
+  background: #171212;
+  color: black;
   fill: #ffffff;
   stroke: #ffffff;
 }
