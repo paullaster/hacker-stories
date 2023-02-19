@@ -199,6 +199,7 @@ const App = () => {
   //}, [searchText])
   //custom hook
   const useSemiPersistentState = (key, initialState) => {
+    const
     const [ value, setValue] = React.useState (
       localStorage.getItem (key) || initialState,
     );
