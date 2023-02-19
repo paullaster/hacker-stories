@@ -269,7 +269,7 @@ const App = () => {
   // });
   return (
     <div className={styles.container}>
-      <h1 className='headline-primary'>
+      <h1 className={styles.headlinePrimary}>
         Welcome to {getTitle("Hacker Stories")}
       </h1>
       <SearchForm
