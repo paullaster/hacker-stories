@@ -50,7 +50,7 @@ const InputWithLabel = ({id, value, type='text', onInputChange, isFocused, child
 
   return (
     <React.Fragment>
-      <label htmlFor={id}> {children}</label>
+      <label htmlFor={id} className='label'> {children}</label>
       &nbsp;
       <input
         type={type}
@@ -59,6 +59,7 @@ const InputWithLabel = ({id, value, type='text', onInputChange, isFocused, child
         onChange={onInputChange}
         placeholder="Try again later"
         ref={inputRef}
+        className='input'
       />
 
       <p>
