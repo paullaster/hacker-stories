@@ -278,7 +278,7 @@ const App = () => {
     });
   },[]);
 
-const sumComment = React.useMemo( () => getSumComments(stories));
+const sumComment = React.useMemo( () => getSumComments(stories), [stories]);
   //Filtering the search text
   // const searchedTerm = stories.data.filter ( (story) => {
   //   return story.title.toLowerCase ().includes (searchText.toLowerCase ());
