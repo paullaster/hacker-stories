@@ -100,8 +100,8 @@ const Item = ({item, onRemoveItem}) => {
         </span>
         <span style={{width: '10%'}}>
           <Button onClick={ () => onRemoveItem (item) } >
-        Remove item
-      </Button>
+            Remove item
+          </Button>
         </span>
      </li>
 
