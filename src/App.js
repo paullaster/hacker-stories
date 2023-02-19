@@ -265,7 +265,7 @@ const App = () => {
   // });
   return (
     <div className='container'>
-      <h1>
+      <h1 className='headline-primary'>
         Welcome to {getTitle("Hacker Stories")}
       </h1>
       <SearchForm
@@ -273,7 +273,7 @@ const App = () => {
       handleTry={handleTry}
       handleSearchSubmit={handleSearchSubmit}
       />
-      
+
       {/*want to display array below */}
       {/*List one */}
       {stories.isError && <p>Something went wrong...</p>}
