@@ -265,12 +265,12 @@ const App = () => {
     event.preventDefault();
   }
 
-  const handleRemovedStory = (item) => {
+  const handleRemovedStory = React.useCallback((item) => {
     dispatchStories({
       type: 'REMOVE_STORY',
       payload: item,
     });
-  };
+  },[]);
 
 
   //Filtering the search text
