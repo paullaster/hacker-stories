@@ -98,11 +98,12 @@ const Item = ({item, onRemoveItem}) => {
         <span style={{width: '10%'}}>
           {item.num_comments}
         </span>
+        <span style={{width: '10%'}}>
+          <Button onClick={ () => onRemoveItem (item) } >
+        Remove item
+      </Button>
+        </span>
      </li>
-
-    <Button onClick={ () => onRemoveItem (item) } >
-      Remove item
-    </Button>
 
     </React.Fragment>
   );
