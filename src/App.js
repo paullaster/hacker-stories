@@ -207,7 +207,7 @@ const App = () => {
   const API_ENDPOINT = 'https://hn.algolia.com/api/v1/search?query=';
 
   const [searchTerm, setSearchTerm] = useSemiPersistentState ('search', 'ExpressJs');
-  const [url, setUrl] = React.useState(`${API_ENDPOINT}${searchTerm}`);
+  const [URL, setURL] = React.useState(`${API_ENDPOINT}${searchTerm}`);
   const [stories, dispatchStories] = React.useReducer (
     storiesReducer, {
       data: [],
@@ -224,7 +224,7 @@ const App = () => {
       }
     )
     try{
-      const responseData = await axios.get(url)
+      const responseData = await axios.get(`${API_ENDPOINT}${searchTerm}`)
       dispatchStories (
         {
             type: 'SET_STORIES',
@@ -236,7 +236,7 @@ const App = () => {
           type: 'STORIES_ERROR',
         });
     }
-  },[url])
+  },[URL])
 
   React.useEffect ( () => {
     handleFetchedStories ();
@@ -247,7 +247,7 @@ const App = () => {
   };
 
   const handleSearchSubmit = (event) => {
-    setUrl(`${API_ENDPOINT}${searchTerm}`);
+    setURL(`${API_ENDPOINT}${searchTerm}`);
     event.preventDefault();
   }
 
