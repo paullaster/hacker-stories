@@ -81,7 +81,7 @@ const Item = ({item, onRemoveItem}) => {
   return (
     <React.Fragment>
       <li className='item'>
-        <span>
+        <span style={{width: '40%'}}>
           <a href={item.url}>
             {item.title}
           </a>
