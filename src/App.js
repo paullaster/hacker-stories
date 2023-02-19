@@ -278,7 +278,7 @@ const App = () => {
     });
   },[]);
 
-
+const sumComment = getSumComments(stories);
   //Filtering the search text
   // const searchedTerm = stories.data.filter ( (story) => {
   //   return story.title.toLowerCase ().includes (searchText.toLowerCase ());
