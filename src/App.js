@@ -263,9 +263,9 @@ const App = () => {
     handleFetchedStories();
   }, [handleFetchedStories]);
 
-  const handleTry = (event) => {
+  const handleTry = React.useCallback((event) => {
     setSearchTerm(event.target.value);
-  };
+  }, []);
 
   const handleSearchSubmit = React.useCallback((event) => {
     setURL(`${API_ENDPOINT}${searchTerm}`);
