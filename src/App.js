@@ -95,7 +95,7 @@ const Item = ({item, onRemoveItem}) => {
           {item.points}
         </span>
         <br />
-        <span>
+        <span style={{width: '10%'}}>
           {item.num_comments}
         </span>
      </li>
