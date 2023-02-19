@@ -224,7 +224,7 @@ const App = () => {
       }
     )
     try{
-      const responseData = await axios.get(`${API_ENDPOINT}${searchTerm}`)
+      const responseData = await axios.get(URL)
       dispatchStories (
         {
             type: 'SET_STORIES',
