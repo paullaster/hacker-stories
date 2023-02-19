@@ -37,8 +37,8 @@
   color: #ffffff;
 }
 .button:hover > svg > g {
-  background: #171212;
-  color: #ffffff;
+  fill: #ffffff;
+  stroke: #ffffff;
 }
 .buttonSmall {
   padding: 5px;
