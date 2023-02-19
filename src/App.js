@@ -268,7 +268,7 @@ const App = () => {
   //   return story.title.toLowerCase ().includes (searchText.toLowerCase ());
   // });
   return (
-    <div className='container'>
+    <div className={styles.container}>
       <h1 className='headline-primary'>
         Welcome to {getTitle("Hacker Stories")}
       </h1>
