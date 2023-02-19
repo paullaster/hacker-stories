@@ -87,7 +87,7 @@ const Item = ({item, onRemoveItem}) => {
           </a>
         </span>
         <br />
-        <span>
+        <span style={{width: '30%'}}>
           {item.author}
         </span>
         <br />
