@@ -111,7 +111,7 @@ const Item = ({item, onRemoveItem}) => {
 
 const Button = ( {onClick, type="button", children} ) => {
   return (
-    <button onClick={onClick} type={type}>
+    <button onClick={onClick} type={type} className='button button_small'>
       {children}
     </button>
   );
