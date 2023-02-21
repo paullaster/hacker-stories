@@ -115,7 +115,7 @@ export const Item = React.memo(({ item, onRemoveItem }) => {
   );
 });
 
-const Button = ({ onClick, type = "button", children }) => {
+export const Button = ({ onClick, type = "button", children }) => {
   return (
     <button onClick={onClick} type={type} className={classNames(styles.button, styles.buttonSmall)}>
       {children}
