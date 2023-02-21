@@ -46,7 +46,11 @@ const stories = [storyOne, storyTwo];
 describe("storiesReducer", () => {
   test('remove a story from the stories list', () => {
     const action = {type: "REMOVE_STORY", payload: storyOne};
-    const state = //TODO: some state
+    const state = {
+      data: stories,
+      isLoading: false,
+      isError: false,
+    };
     const newState = storiesReducer(state, action);
     const expectedState = //TODO: expected state
     expect(newState).toBe(expectedState);
