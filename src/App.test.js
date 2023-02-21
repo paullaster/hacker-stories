@@ -8,11 +8,14 @@ describe('something truthy and falsy', () => {
 
  test('false to be false', () => {
   expect(false).toBeFalsy();
- })
+ });
 });
 
 describe('App component', () => {
   test('remove item when clicking remove item button', () => {
+
+  });
+  test('request some initial stories from API', () => {
     
-  })
-})
+  });
+});
