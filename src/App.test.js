@@ -57,6 +57,6 @@ describe("storiesReducer", () => {
       isLoading: false,
       isError: false,
     }
-    expect(newState).toBe(expectedState);
+    expect(newState).toStrictEqual(expectedState);
   })
 });
