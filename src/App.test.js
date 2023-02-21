@@ -52,7 +52,11 @@ describe("storiesReducer", () => {
       isError: false,
     };
     const newState = storiesReducer(state, action);
-    const expectedState = //TODO: expected state
+    const expectedState = {
+      data: [storyTwo],
+      isLoading: false,
+      isError: false,
+    }
     expect(newState).toBe(expectedState);
   })
 });
