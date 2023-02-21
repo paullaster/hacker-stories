@@ -82,7 +82,7 @@ export const List = React.memo(({ list, onRemoveItem }) =>
     })}
   </ul>
 );
-const Item = React.memo(({ item, onRemoveItem }) => {
+export const Item = React.memo(({ item, onRemoveItem }) => {
   console.log("D: item" + item.objectID)
   return (
     <React.Fragment>
