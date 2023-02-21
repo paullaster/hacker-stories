@@ -48,5 +48,6 @@ describe("storiesReducer", () => {
     const action = //TODO: some action
     const state = //TODO: some state
     const newState = storiesReducer(state, action);
+    const expectedState = //TODO: expected state
   })
 });
