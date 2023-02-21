@@ -28,3 +28,7 @@ describe('App component', () => {
 
   });
 });
+
+describe('storiesReducer', () => {
+  
+})
