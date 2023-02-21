@@ -1,5 +1,14 @@
-//import { render, screen } from '@testing-library/react';
-//import App from './App';
+import * as React from "react";
+import App, {
+  getTitle,
+  storiesReducer,
+  InputWithLabel,
+  List,
+  Item,
+  Button,
+  SearchForm,
+  getSumComments
+} from "./App";
 
 describe('something truthy and falsy', () => {
  test('true to be true', () => {
