@@ -72,7 +72,7 @@ export const InputWithLabel = ({ id, value, type = 'text', onInputChange, isFocu
   );
 };
 
-const List = React.memo(({ list, onRemoveItem }) =>
+export const List = React.memo(({ list, onRemoveItem }) =>
   console.log("B: List") ||
   <ul>
     {list.map((item) => {
