@@ -45,6 +45,8 @@ const storyTwo = {
 const stories = [storyOne, storyTwo];
 describe("storiesReducer", () => {
   test('remove a story from the stories list', () => {
-    
+    const action = //TODO: some action
+    const state = //TODO: some state
+    const newState = storiesReducer(state, action);
   })
 });
