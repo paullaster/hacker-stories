@@ -149,7 +149,7 @@ export const SearchForm = React.memo(({ searchTerm, handleTry, handleSearchSubmi
   )
 });
 
-const getSumComments = (stories) => {
+export const getSumComments = (stories) => {
   return stories.data.reduce( (result, value) => {
     return result + value.num_comments;
   }, 0)
