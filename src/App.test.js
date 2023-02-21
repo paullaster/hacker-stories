@@ -16,6 +16,6 @@ describe('App component', () => {
 
   });
   test('request some initial stories from API', () => {
-    
+
   });
 });

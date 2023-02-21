@@ -5,10 +5,10 @@ import classNames from 'classnames';
 import { ReactComponent as Check } from './check.svg';
 
 //variables
-const getTitle = (title) => {
+export const getTitle = (title) => {
   return title;
 }
-const storiesReducer = (state, action) => {
+export const storiesReducer = (state, action) => {
   switch (action.type) {
     case "STORIES_INIT":
       return {
