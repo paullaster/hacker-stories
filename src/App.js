@@ -41,7 +41,7 @@ export const storiesReducer = (state, action) => {
   }
 }
 
-const InputWithLabel = ({ id, value, type = 'text', onInputChange, isFocused, children }) => {
+export const InputWithLabel = ({ id, value, type = 'text', onInputChange, isFocused, children }) => {
   const inputRef = React.useRef();
 
   React.useEffect(() => {
