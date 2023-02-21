@@ -1,9 +1,8 @@
 import React from 'react';
-import axios from 'axios';
 import styles from "./App.module.css";
 import classNames from 'classnames';
 import { ReactComponent as Check } from './check.svg';
-
+import axios from 'axios';
 //variables
 export const getTitle = (title) => {
   return title;
