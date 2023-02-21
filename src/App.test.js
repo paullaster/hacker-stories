@@ -11,3 +11,8 @@ describe('something truthy and falsy', () => {
  })
 });
 
+describe('App component', () => {
+  test('remove item when clicking remove item button', () => {
+    
+  })
+})
