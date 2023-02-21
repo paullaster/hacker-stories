@@ -42,4 +42,5 @@ const storyTwo = {
   objectID: 1
 };
 
+const stories = [storyOne, storyTwo];
 describe("storiesReducer", () => {});
