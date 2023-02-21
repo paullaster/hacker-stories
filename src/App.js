@@ -123,7 +123,7 @@ export const Button = ({ onClick, type = "button", children }) => {
   );
 };
 
-const SearchForm = React.memo(({ searchTerm, handleTry, handleSearchSubmit }) => {
+export const SearchForm = React.memo(({ searchTerm, handleTry, handleSearchSubmit }) => {
   console.log("C: form")
   return (
     <form onSubmit={handleSearchSubmit} className={styles.searchForm}>
